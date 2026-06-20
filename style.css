@@ -1,0 +1,742 @@
+:root{
+    --orange:#ff6b00;
+    --blue:#0066ff;
+    --cyan:#00e5ff;
+    --dark:#0a0a0a;
+    --gray:#111827;
+    --neon:#00ffff;
+    --white:#ffffff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    background:#050505;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/*=====================
+NAVBAR
+======================*/
+.navbar{
+    background:rgba(5,5,5,.9);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+.navbar-brand{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:2rem;
+    letter-spacing:2px;
+    color:white !important;
+}
+.nav-link{
+    color:white !important;
+    margin-left:20px;
+    font-weight:600;
+}
+.nav-link.active{
+    color:var(--cyan) !important;
+}
+.btn-neon{
+    background:transparent;
+    border:2px solid var(--neon);
+    color:var(--neon);
+    padding:12px 28px;
+    border-radius:50px;
+    font-weight:700;
+    box-shadow:0 0 10px var(--neon),0 0 25px var(--neon);
+    transition:.4s;
+}
+.btn-neon:hover{
+    background:var(--neon);
+    color:black;
+}
+.btn-neon:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+    box-shadow:none;
+}
+
+/*=====================
+HERO (index)
+======================*/
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+               url('../images/hero.jpg');
+    background-size:cover;
+    background-position:center;
+}
+.hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:7rem;
+    line-height:.9;
+    margin:20px 0;
+    background:linear-gradient(90deg,#fff,var(--orange),var(--cyan));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.hero-tag{
+    color:var(--cyan);
+    font-size:1.3rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:1rem;
+}
+.hero-subtitle{
+    max-width:700px;
+    font-size:1.2rem;
+    color:#ddd;
+}
+
+/* Graffiti */
+.graffiti{
+    position:absolute;
+    font-family:'Bebas Neue';
+    font-size:10rem;
+    opacity:.06;
+    transform:rotate(-10deg);
+    color:var(--orange);
+    pointer-events:none;
+}
+.g1{top:10%;right:5%;}
+.g2{bottom:10%;left:5%;}
+
+/*=====================
+HERO BATALLA
+======================*/
+.batalla-hero{
+    min-height:60vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    background:linear-gradient(135deg,#050505 0%,#0b0015 50%,#0a0a0a 100%);
+    border-bottom:1px solid rgba(0,229,255,.15);
+    padding-top:100px;
+    text-align:center;
+}
+.batalla-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(ellipse at 50% 50%,rgba(0,229,255,.07) 0%,transparent 70%);
+}
+
+/*=====================
+EXPERIENCIA (index)
+======================*/
+.section-title{
+    font-family:'Bebas Neue';
+    font-size:4rem;
+    letter-spacing:2px;
+}
+.experience{
+    padding:120px 0;
+    background:linear-gradient(180deg,#050505,#0b1020);
+}
+.step-card{
+    height:100%;
+    background:rgba(255,255,255,.04);
+    border:2px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    padding:40px;
+    position:relative;
+    overflow:hidden;
+    transition:.4s;
+}
+.step-card:hover{
+    transform:translateY(-10px);
+    border-color:var(--cyan);
+    box-shadow:0 0 20px rgba(0,229,255,.25);
+}
+.step-card::before{
+    content:"";
+    position:absolute;
+    width:120px;height:120px;
+    background:var(--orange);
+    top:-40px;right:-40px;
+    border-radius:50%;
+    opacity:.15;
+}
+.step-number{
+    font-family:'Bebas Neue';
+    font-size:4rem;
+    color:var(--orange);
+}
+.step-icon{font-size:3rem;margin-bottom:15px;}
+.step-title{font-size:1.4rem;font-weight:800;margin-bottom:15px;}
+
+/* CTA Batalla botón */
+.btn-batalla{
+    background:transparent;
+    border:2px solid var(--orange);
+    color:var(--orange);
+    padding:16px 48px;
+    border-radius:50px;
+    font-weight:800;
+    font-size:1.1rem;
+    letter-spacing:1px;
+    box-shadow:0 0 15px rgba(255,107,0,.4);
+    transition:.4s;
+    text-decoration:none;
+    display:inline-block;
+}
+.btn-batalla:hover{
+    background:var(--orange);
+    color:black;
+    box-shadow:0 0 30px rgba(255,107,0,.7);
+}
+.btn-batalla-icon{margin-right:8px;}
+
+/*=====================
+STATS
+======================*/
+.stats{padding:80px 0;background:black;}
+.stat-box{text-align:center;}
+.stat-number{font-family:'Bebas Neue';font-size:4rem;color:var(--cyan);}
+
+/*=====================
+FOOTER
+======================*/
+footer{
+    background:#030303;
+    padding:60px 0;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+.footer-title{color:var(--orange);font-weight:800;}
+.footer-link{
+    display:block;
+    color:#ccc;
+    text-decoration:none;
+    margin-bottom:10px;
+}
+.footer-link:hover{color:var(--cyan);}
+.copy{
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:30px;padding-top:20px;
+    text-align:center;color:#888;
+}
+
+/*=====================
+MODAL
+======================*/
+.modal-dark{
+    background:#0d0d0d;
+    border:1px solid rgba(0,229,255,.2);
+    border-radius:20px;
+    color:white;
+}
+.modal-neon{
+    font-family:'Bebas Neue';
+    font-size:2rem;
+    color:var(--cyan);
+    letter-spacing:2px;
+}
+.modal-sub{
+    font-size:.9rem;
+    color:#aaa;
+    font-family:'Montserrat';
+    letter-spacing:0;
+}
+
+/* Category cards inside modal */
+.cat-card{
+    background:rgba(255,255,255,.04);
+    border:2px solid rgba(255,255,255,.1);
+    border-radius:16px;
+    padding:24px 16px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    height:100%;
+}
+.cat-card:hover{
+    border-color:var(--cyan);
+    background:rgba(0,229,255,.07);
+    transform:translateY(-4px);
+}
+.cat-card.selected{
+    border-color:var(--cyan);
+    background:rgba(0,229,255,.12);
+    box-shadow:0 0 16px rgba(0,229,255,.3);
+}
+.cat-icon{font-size:2.5rem;margin-bottom:8px;}
+.cat-name{
+    font-weight:800;
+    font-size:1.1rem;
+    margin-bottom:6px;
+}
+.cat-desc{font-size:.8rem;color:#aaa;}
+
+.selected-msg{
+    margin-top:20px;
+    padding:12px 20px;
+    background:rgba(0,229,255,.1);
+    border:1px solid rgba(0,229,255,.3);
+    border-radius:10px;
+    color:var(--cyan);
+    text-align:center;
+    font-size:.9rem;
+}
+
+/*=====================
+VITRINA (batalla.html)
+======================*/
+.vitrina{
+    padding:100px 0;
+    background:linear-gradient(180deg,#050505,#08080f);
+}
+.vitrina-row{
+    padding:40px 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+.vitrina-row:last-child{border-bottom:none;}
+
+.vitrina-img-wrap{
+    position:relative;
+    border-radius:20px;
+    overflow:hidden;
+}
+.vitrina-placeholder{
+    width:100%;
+    aspect-ratio:4/3;
+    background:linear-gradient(135deg,rgba(0,229,255,.06),rgba(255,107,0,.06));
+    border:2px dashed rgba(255,255,255,.15);
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+.vitrina-emoji{font-size:4rem;}
+.vitrina-img-label{
+    color:#555;
+    font-size:.85rem;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.vitrina-badge{
+    position:absolute;
+    top:16px;left:16px;
+    background:var(--cyan);
+    color:black;
+    font-weight:800;
+    font-size:.8rem;
+    padding:6px 14px;
+    border-radius:50px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.vitrina-badge.orange{
+    background:var(--orange);
+    color:white;
+}
+.vitrina-content{padding:20px 0;}
+.vitrina-cat-tag{
+    color:var(--cyan);
+    font-size:.85rem;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+.vitrina-title{
+    font-family:'Bebas Neue';
+    font-size:3.5rem;
+    margin-bottom:16px;
+    letter-spacing:1px;
+}
+.vitrina-desc{
+    color:#bbb;
+    font-size:1rem;
+    line-height:1.7;
+    margin-bottom:24px;
+}
+.btn-vitrina{
+    background:transparent;
+    border:2px solid var(--cyan);
+    color:var(--cyan);
+    padding:12px 28px;
+    border-radius:50px;
+    font-weight:700;
+    transition:.3s;
+}
+.btn-vitrina:hover{
+    background:var(--cyan);
+    color:black;
+}
+.btn-vitrina.orange{
+    border-color:var(--orange);
+    color:var(--orange);
+}
+.btn-vitrina.orange:hover{
+    background:var(--orange);
+    color:white;
+}
+
+/*=====================
+MI EXPERIENCIA
+======================*/
+.mi-experiencia{
+    padding:100px 0;
+    background:#030303;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+.exp-form-card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:48px;
+}
+.exp-label{
+    display:block;
+    font-weight:700;
+    font-size:.9rem;
+    color:#ccc;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+.exp-input{
+    width:100%;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:14px 18px;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    font-size:.95rem;
+    transition:.3s;
+    outline:none;
+    appearance:none;
+}
+.exp-input:focus{
+    border-color:var(--cyan);
+    box-shadow:0 0 0 3px rgba(0,229,255,.1);
+}
+.exp-textarea{resize:vertical;min-height:140px;}
+select.exp-input option{background:#111;color:white;}
+
+.upload-area{
+    border:2px dashed rgba(0,229,255,.3);
+    border-radius:16px;
+    padding:40px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    background:rgba(0,229,255,.03);
+}
+.upload-area:hover{
+    border-color:var(--cyan);
+    background:rgba(0,229,255,.07);
+}
+.upload-icon{font-size:2.5rem;margin-bottom:10px;}
+.upload-text{font-weight:700;font-size:1rem;color:var(--cyan);}
+.upload-sub{font-size:.8rem;color:#666;margin-top:4px;}
+
+.preview-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(100px,1fr));
+    gap:12px;
+}
+.preview-img{
+    width:100%;
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid rgba(0,229,255,.2);
+}
+
+.success-msg{
+    margin-top:20px;
+    padding:16px;
+    background:rgba(0,229,255,.1);
+    border:1px solid rgba(0,229,255,.3);
+    border-radius:12px;
+    color:var(--cyan);
+    text-align:center;
+    font-weight:700;
+}
+
+/*=====================
+RESPONSIVE
+======================*/
+@media(max-width:992px){
+    .hero-title{font-size:4.5rem;}
+    .section-title{font-size:3rem;}
+    .vitrina-title{font-size:2.5rem;}
+}
+@media(max-width:768px){
+    .hero-title{font-size:3.5rem;}
+    .hero-subtitle{font-size:1rem;}
+    .exp-form-card{padding:28px 20px;}
+    .vitrina-title{font-size:2rem;}
+    .batalla-hero{padding-top:80px;}
+}
+
+/*=====================
+BATALLA SECTION
+======================*/
+.batalla-section{
+    padding:120px 0;
+    background:linear-gradient(180deg,#0b1020,#050505);
+    position:relative;
+}
+.batalla-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(0,229,255,.05) 0%,transparent 60%);
+    pointer-events:none;
+}
+.batalla-eyebrow{
+    color:var(--cyan);
+    font-size:.9rem;
+    font-weight:700;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+.batalla-title{
+    font-size:5rem;
+    line-height:.9;
+    background:linear-gradient(90deg,#fff,var(--cyan));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:20px;
+}
+
+/* Tarjeta acordeón de categoría */
+.cat-vitrina{
+    background:rgba(255,255,255,.03);
+    border:2px solid rgba(0,229,255,.15);
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+}
+.cat-vitrina:hover{
+    border-color:rgba(0,229,255,.4);
+    background:rgba(0,229,255,.04);
+}
+.cat-vitrina.orange{
+    border-color:rgba(255,107,0,.2);
+}
+.cat-vitrina.orange:hover{
+    border-color:rgba(255,107,0,.5);
+    background:rgba(255,107,0,.04);
+}
+
+.cat-vitrina-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:24px 28px;
+}
+.cat-vitrina-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+.cat-vitrina-icon{font-size:2.2rem;}
+.cat-vitrina-label{
+    color:var(--cyan);
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+.cat-vitrina-name{
+    font-family:'Bebas Neue';
+    font-size:1.8rem;
+    letter-spacing:1px;
+    line-height:1;
+}
+.cat-vitrina-arrow{
+    color:var(--cyan);
+    font-size:1.1rem;
+    transition:transform .35s;
+}
+.cat-vitrina-arrow.open{ transform:rotate(180deg); }
+.cat-vitrina-arrow.orange{ color:var(--orange); }
+
+/* Cuerpo colapsable */
+.cat-vitrina-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .45s ease;
+    padding:0 28px;
+}
+.cat-vitrina-body.open{
+    max-height:600px;
+    padding-bottom:28px;
+}
+
+.cat-vitrina-placeholder{
+    width:100%;
+    aspect-ratio:16/7;
+    background:rgba(255,255,255,.03);
+    border:2px dashed rgba(255,255,255,.1);
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:20px;
+}
+.placeholder-emoji{font-size:3rem;}
+.placeholder-label{
+    color:#444;
+    font-size:.8rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.cat-vitrina-desc{
+    color:#bbb;
+    line-height:1.7;
+    margin-bottom:16px;
+    font-size:.95rem;
+}
+.cat-vitrina-info{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.info-item{
+    font-size:.85rem;
+    color:#999;
+    padding:8px 14px;
+    background:rgba(255,255,255,.04);
+    border-radius:8px;
+    border-left:3px solid var(--cyan);
+}
+.cat-vitrina.orange .info-item{
+    border-left-color:var(--orange);
+}
+
+/*=====================
+MI EXPERIENCIA
+======================*/
+.mi-experiencia{
+    padding:100px 0;
+    background:#030303;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+.exp-form-card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:48px;
+}
+.exp-text-card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:48px;
+    color:#ddd;
+    font-size:1.05rem;
+    line-height:1.8;
+}
+.exp-text-card p{margin-bottom:18px;}
+.exp-text-card p:last-child{margin-bottom:0;}
+}
+.exp-input{
+    width:100%;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:14px 18px;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+    font-size:.95rem;
+    transition:.3s;
+    outline:none;
+    appearance:none;
+}
+.exp-input:focus{
+    border-color:var(--cyan);
+    box-shadow:0 0 0 3px rgba(0,229,255,.1);
+}
+.exp-textarea{resize:vertical;min-height:140px;}
+select.exp-input option{background:#111;color:white;}
+.upload-area{
+    border:2px dashed rgba(0,229,255,.3);
+    border-radius:16px;
+    padding:40px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    background:rgba(0,229,255,.03);
+}
+.upload-area:hover{
+    border-color:var(--cyan);
+    background:rgba(0,229,255,.07);
+}
+.upload-icon{font-size:2.5rem;margin-bottom:10px;}
+.upload-text{font-weight:700;font-size:1rem;color:var(--cyan);}
+.upload-sub{font-size:.8rem;color:#555;margin-top:4px;}
+.preview-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(100px,1fr));
+    gap:12px;
+}
+.preview-img{
+    width:100%;
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:10px;
+    border:2px solid rgba(0,229,255,.2);
+}
+.exp-gallery-card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:32px;
+}
+.exp-url-row{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+.exp-url-row .exp-input{flex:1;min-width:200px;}
+.preview-item{
+    position:relative;
+}
+.preview-remove{
+    position:absolute;
+    top:6px;
+    right:6px;
+    width:24px;
+    height:24px;
+    border:none;
+    border-radius:50%;
+    background:rgba(0,0,0,.7);
+    color:white;
+    font-size:1rem;
+    line-height:1;
+    cursor:pointer;
+}
+.preview-remove:hover{background:var(--orange);}
+    margin-top:20px;
+    padding:16px;
+    background:rgba(0,229,255,.1);
+    border:1px solid rgba(0,229,255,.3);
+    border-radius:12px;
+    color:var(--cyan);
+    text-align:center;
+    font-weight:700;
+}
+
+@media(max-width:768px){
+    .batalla-title{font-size:3.5rem;}
+    .exp-form-card{padding:28px 20px;}
+    .cat-vitrina-header{padding:18px 20px;}
+    .cat-vitrina-body.open{padding:0 20px 20px;}
+}
